@@ -29,7 +29,7 @@ app.use(cookieparser())
 app.use(express.json())
 
 
-app.use('/api',require('./routes/userRoutes'))
+app.use('/',require('./routes/userRoutes'))
 
 
 const PORT = process.env.PORT || 5000
