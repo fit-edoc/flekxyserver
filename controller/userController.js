@@ -70,8 +70,9 @@ const loginController = async(req,res)=>{
          message:"password did not match"
      })
   }
+  const tokenn = process.env.JWT_TOKEN
   // return res.status(500).send({success: true,message: 'login success',user});
-const token = JWT.sign({id:user._id},process.env.JWT_TOKEN ,{expiresIn:"7d"})
+const token = JWT.sign({id:user._id}, tokenn,{expiresIn:"7d"})
   res.status(200).send(
       {success:true,
       message:"login sucessfully",
