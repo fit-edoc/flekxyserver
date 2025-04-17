@@ -12,18 +12,16 @@ connectDb()
 const app = express()
 app.use(express.json())
 app.use(cors({
-  
-    origin:"https://flekxyshop.vercel.app",
-    methods:["POST","GET","PUT","DELETE"],
+    origin: ["https://flekxyshop.vercel.app", "http://localhost:5173"],
+    methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
         "Content-Type",
         "Authorization",
         "Cache-Control",
         "Expires",
-        "Pragma",
-      ],
-      credentials: true,
-    
+        "Pragma"
+    ],
+    credentials: true
 }))
 app.use(cookieparser())
 app.use(express.json())
